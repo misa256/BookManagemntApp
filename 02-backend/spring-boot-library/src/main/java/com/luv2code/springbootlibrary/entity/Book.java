@@ -1,13 +1,13 @@
 package com.luv2code.springbootlibrary.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity
 @Data
+@Entity
 @Table(name = "book" , schema = "public")
 public class Book {
     @Id

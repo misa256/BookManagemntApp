@@ -6,5 +6,5 @@ export type ReviewModel = {
     date : string;
     rating : number;
     reviewDescription : string;
-    book_id : number;
+    //book_id : number;
 };

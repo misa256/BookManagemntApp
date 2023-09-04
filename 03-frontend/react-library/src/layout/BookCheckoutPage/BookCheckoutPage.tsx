@@ -77,8 +77,7 @@ useEffect(()=>{
         userEmail : responseData[key].userEmail,
         date : responseData[key].date,
         rating : responseData[key].rating,
-        // book_id持って来れんの？？
-        book_id : responseData[key].bookId,
+        //book_id : responseData[key].bookId,
         reviewDescription : responseData[key].reviewDescription
        });
        weightedStarReviews = weightedStarReviews + responseData[key].rating;
@@ -86,6 +85,7 @@ useEffect(()=>{
 
     if(loadedReviews){
       const round = (Math.round((weightedStarReviews / loadedReviews.length) * 2)/2).toFixed(1);
+      //roundを数値に変換
       setTotalStars(Number(round));
     }
     setReviews(loadedReviews);
@@ -138,11 +138,10 @@ useEffect(()=>{
           <CheckoutAndReviewBox book={book} mobile={false}/>
         </div>
         <hr />
-        {reviews?
-        <LatestReviews reviews={reviews} bookId={book?.id} mobile={false}/>
-        :
-        <p>No Reviews</p>
-        }
+        <LatestReviews 
+        reviews={reviews} 
+        // bookId={book?.id} 
+        mobile={false}/>
       </div>
       {/* mobile app用 */}
       <div className="container d-lg-none mt-5">
@@ -168,11 +167,10 @@ useEffect(()=>{
         </div>
         <CheckoutAndReviewBox book={book} mobile={true}/>
         <hr />
-        {reviews?
-        <LatestReviews reviews={reviews} bookId={book?.id} mobile={true}/>
-        :
-        <p>No Reviews</p>
-        }
+        <LatestReviews 
+        reviews={reviews} 
+        //bookId={book?.id} 
+        mobile={true}/>
       </div>
     </div>
   );

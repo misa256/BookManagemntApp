@@ -1,13 +1,13 @@
 package com.luv2code.springbootlibrary.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.util.Date;
 
-@Entity
 @Data
+@Entity
 @Table(name = "review", schema = "public")
 public class Review {
     @Id

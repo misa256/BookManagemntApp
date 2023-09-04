@@ -4,7 +4,9 @@ import { ReviewModel } from "../../models/ReviewModel";
 import { Review } from "../Utils/Review";
 
 export const LatestReviews:FC<{
-reviews : ReviewModel[], bookId : number | undefined, mobile : boolean
+reviews : ReviewModel[], 
+// bookId : number | undefined, 
+mobile : boolean
 }>=(props)=>{
 return(
     <div className={props.mobile ? 'mt-3' : 'row mt-5'}>
