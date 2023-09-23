@@ -24,7 +24,6 @@ public class Review {
     @Column(name = "review_description")
     private String reviewDescription;
     @ManyToOne(fetch = FetchType.LAZY)
-    //specify foreign key
     @JoinColumn(name = "book_id", nullable = false)
     private Book book;
 }
